@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* theme */
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+    /* weights */
+    --light: 300;
+    --regular: 600;
+    --bold: 700;
+    --extra-bold: 900;
+
+    /* color */
+    --primary: hsl(0, 100%, 50%);
+    --primary-light: hsl(0, 100%, 60%);
+    --primary-dark: hsl(0, 100%, 49%);
+    --type-color: hsl(0, 0%, 100%);
+    --type-grey: hsl(0, 0%, 95%);
+    --type-dark: hsl(0, 0%, 78%);
+    --background: hsl(0, 0%, 13%);
+    --background-tint: hsl(0, 11%, 24%);
+    --shadow: hsl(0, 42%, 22%);
+
+    /* transition speed */
+    --speed: 70ms;
+    --flow: linear;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--type-color);
+}
+
+.container,
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin: 1.5rem 0;
+}
+
+.app-title {
+    color: var(--primary);
+    font-weight: var(--extra-bold);
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    cursor: default;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+}
+
+.search-form > input {
+    flex: 2 1 auto;
+    outline: none;
+    border: none;
+    background-color: var(--background-tint);
+    padding: 0.4rem 0.8rem;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    font-size: 1.2rem;
+    color: var(--type-color);
+    letter-spacing: 0.1ch;
+    transition: all var(--speed) var(--flow);
+}
+
+.search-form > input::placeholder {
+    color: var(--type-dark);
+}
+
+.search-form > input:focus {
+    box-shadow: 0 0 1px 2px var(--shadow);
+}
+
+.search-form > button {
+    flex: 1 1 0;
+    outline: none;
+    border: none;
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+    background-color: var(--primary-light);
+    color: var(--type-color);
+    font-size: 1.2rem;
+    letter-spacing: 0.1ch;
+    font-weight: var(--bold);
+    cursor: pointer;
+    transition: all var(--speed) var(--flow);
+}
+
+.search-form > button:hover {
+    background-color: var(--primary-dark);
+    color: var(--type-grey);
+}
+
+/* showcase */
+
+.showcase {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: auto 2rem;
+}
+
+.item {
+    background-color: var(--background-tint);
+}
