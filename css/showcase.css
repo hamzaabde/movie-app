@@ -1,0 +1,46 @@
+.showcase {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 180px));
+    grid-template-rows: repeat(auto, 10px);
+    gap: 1rem;
+    margin: 2rem 2rem;
+}
+
+.movie {
+    position: relative;
+}
+
+.movie > .poster {
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.movie > .poster {
+    height: 100%;
+}
+
+.movie > .poster > img {
+    width: 100%;
+    min-height: 100%;
+}
+
+.movie > .title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    backdrop-filter: blur(5px);
+    background-color: var(--backdrop);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.movie h2 {
+    color: var(--type-grey);
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1ch;
+    word-wrap: break-word;
+    font-weight: var(--bold);
+}

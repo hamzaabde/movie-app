@@ -1,0 +1,83 @@
+header {
+    margin: 1.5rem 0;
+}
+
+h1 {
+    color: var(--primary);
+    font-weight: var(--extra-bold);
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    cursor: default;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.search-form > input {
+    flex: 2 1 auto;
+    outline: none;
+    border: none;
+    background-color: var(--background-tint);
+    padding: 0.4rem 0.8rem;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    font-size: 1.2rem;
+    color: var(--type-color);
+    letter-spacing: 0.1ch;
+    transition: all var(--speed) var(--flow);
+}
+
+.search-form > input::placeholder {
+    color: var(--type-dark-tint);
+}
+
+.search-form > input:focus {
+    box-shadow: 0 0 1px 2px var(--shadow);
+}
+
+.search-form > button {
+    flex: 1 1 0;
+    outline: none;
+    border: none;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    background-color: var(--primary-light);
+    color: var(--type-color);
+    font-size: 1.2rem;
+    letter-spacing: 0.1ch;
+    font-weight: var(--bold);
+    cursor: pointer;
+    transition: all var(--speed) var(--flow);
+}
+
+.search-form > button:hover {
+    background-color: var(--primary-dark);
+    color: var(--type-grey);
+}
+
+.filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter > span {
+    text-decoration: none;
+    color: var(--type-dark-tint);
+    font-weight: var(--bold);
+    padding: 0.2rem 1rem;
+    cursor: default;
+    border-radius: var(--radius);
+    transition: all var(--speed) var(--flow);
+}
+
+.filter > span:hover {
+    background-color: var(--background-tint);
+}
+
+.filter > span[data-active='true'] {
+    background-color: var(--background-tint);
+}

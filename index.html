@@ -5,49 +5,39 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Movie Recommendations</title>
-        <link rel="stylesheet" href="style.css" />
-        <script defer src="main.js"></script>
+        <!-- styles -->
+        <link rel="stylesheet" href="css/main.css" />
+
+        <!-- scripts -->
+        <script type="module" src="js/main.js"></script>
     </head>
     <body>
         <div class="container">
             <header>
-                <h1 class="app-title">Movie Recommendations</h1>
+                <h1>Movie Recommendations</h1>
                 <form class="search-form">
                     <input
                         type="text"
                         id="search"
-                        placeholder="Search by title and rating"
+                        autocomplete="off"
+                        placeholder="Search by title"
                     />
                     <button id="submit" type="submit">search</button>
                 </form>
+                <div class="filter">
+                    <span class="filter-option active">All</span>
+                    <span class="filter-option">Trending</span>
+                    <span class="filter-option">Top Rated</span>
+                    <span class="filter-option">Most Popular</span>
+                    <span class="filter-option">New Hits</span>
+                </div>
             </header>
             <main>
-                <div class="showcase">
-                    <div class="movie">
-                        <div class="poster">
-                            <img src="#" alt="" />
-                        </div>
-                        <h2 class="movie-title">A title</h2>
-                        <div class="movie-rating">
-                            <span class="rating-value">10</span>
-                            <span class="rating-catagory">good</span>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Voluptatem, quia?
-                        </p>
-                        <div class="movie-tags">
-                            <span class="tag">#action</span>
-                            <span class="tag">#action</span>
-                            <span class="tag">#action</span>
-                            <span class="tag">#action</span>
-                        </div>
-                        <div class="movie-links">
-                            <button>Amazon Prime</button>
-                        </div>
-                    </div>
-                </div>
+                <div class="showcase"></div>
             </main>
+            <footer>
+                <div class="attribution"></div>
+            </footer>
         </div>
     </body>
 </html>

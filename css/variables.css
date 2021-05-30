@@ -1,0 +1,31 @@
+:root {
+    /* theme */
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+    /* weights */
+    --light: 300;
+    --regular: 600;
+    --bold: 700;
+    --extra-bold: 900;
+
+    /* color */
+    --primary: hsl(0, 100%, 50%);
+    --primary-light: hsl(0, 100%, 60%);
+    --primary-dark: hsl(0, 100%, 49%);
+    --type-color: hsl(0, 0%, 100%);
+    --type-grey: hsl(0, 0%, 95%);
+    --type-dark-tint: hsl(0, 9%, 57%);
+    --background: hsl(0, 0%, 13%);
+    --background-tint: hsl(0, 11%, 24%);
+    --backdrop: hsla(0, 11%, 24%, 0.5);
+    --shadow: hsl(0, 42%, 22%);
+
+    /* border radius */
+    --radius: 0.2rem;
+
+    /* transition speed */
+    --speed: 70ms;
+    --flow: linear;
+}
