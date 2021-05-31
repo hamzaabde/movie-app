@@ -1,4 +1,7 @@
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 1.5rem 0;
 }
 
@@ -72,12 +75,13 @@ h1 {
     cursor: default;
     border-radius: var(--radius);
     transition: all var(--speed) var(--flow);
+    user-select: none;
 }
 
 .filter > span:hover {
     background-color: var(--background-tint);
 }
 
-.filter > span[data-active='true'] {
+.filter > span.active {
     background-color: var(--background-tint);
 }

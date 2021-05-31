@@ -4,10 +4,12 @@
 @import url(./variables.css);
 
 /* layout */
-@import url(./layout.css);
+@import url(./layout-large.css) (min-width: 648px);
+/* @import url(./layout-small.css) (max-width: 648px); */
 
 /* header */
 @import url(./header.css);
 
 /* showcase */
-@import url(./showcase.css);
+@import url(./showcase-large.css) (min-width: 648px);
+/* @import url(./showcase-small.css) (max-width: 648px); */

@@ -15,21 +15,21 @@
         <div class="container">
             <header>
                 <h1>Movie Recommendations</h1>
-                <form class="search-form">
+                <div class="search-form">
                     <input
                         type="text"
                         id="search"
                         autocomplete="off"
                         placeholder="Search by title"
                     />
-                    <button id="submit" type="submit">search</button>
-                </form>
+                    <button id="submit">search</button>
+                </div>
                 <div class="filter">
-                    <span class="filter-option active">All</span>
-                    <span class="filter-option">Trending</span>
-                    <span class="filter-option">Top Rated</span>
-                    <span class="filter-option">Most Popular</span>
-                    <span class="filter-option">New Hits</span>
+                    <span class="active" data-option="all">All</span>
+                    <span data-option="trending">Trending</span>
+                    <span data-option="top-rated">Top Rated</span>
+                    <span data-option="most-popular">Most Popular</span>
+                    <span data-option="upcoming">Upcoming</span>
                 </div>
             </header>
             <main>
