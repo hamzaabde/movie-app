@@ -16,8 +16,4 @@ const toggleFilter = ({ target }) => {
     })
 }
 
-filterContainer.querySelectorAll('span').forEach(option => {
-    option.addEventListener('mousedown', toggleFilter)
-})
-
-export default getSelectedFilter
+export { getSelectedFilter, toggleFilter }

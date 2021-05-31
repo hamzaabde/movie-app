@@ -51,7 +51,7 @@ const composeSearchUrl = query => {
 
 const composePosterUrl = async (posterSrc, posterSize = 3) => {
     const { images } = await fetchConfigs()
-    return `${images.base_url}${images.poster_sizes[posterSize]}${posterSrc}`
+    return `${images.secure_base_url}${images.poster_sizes[posterSize]}${posterSrc}`
 }
 
 const compose = {

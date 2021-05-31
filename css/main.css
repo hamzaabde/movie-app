@@ -5,11 +5,12 @@
 
 /* layout */
 @import url(./layout-large.css) (min-width: 648px);
-/* @import url(./layout-small.css) (max-width: 648px); */
+@import url(./layout-small.css) (max-width: 648px);
 
 /* header */
-@import url(./header.css);
+@import url(./header-large.css) (min-width: 700px);
+@import url(./header-small.css) (max-width: 700px);
 
 /* showcase */
 @import url(./showcase-large.css) (min-width: 648px);
-/* @import url(./showcase-small.css) (max-width: 648px); */
+@import url(./showcase-small.css) (max-width: 648px);

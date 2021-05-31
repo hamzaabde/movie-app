@@ -9,8 +9,14 @@ const MovieTile = (id, imgSrc, titleText, releaseDate) => {
     movie.classList.add('movie')
     movie.setAttribute('data-id', id)
 
+    const info = div.cloneNode()
+    info.classList.add('info')
+
     const poster = div.cloneNode()
     poster.classList.add('poster')
+
+    const image = div.cloneNode()
+    image.classList.add('image')
 
     const posterImg = img.cloneNode()
     posterImg.src = imgSrc
@@ -21,10 +27,12 @@ const MovieTile = (id, imgSrc, titleText, releaseDate) => {
     const release = span.cloneNode()
     release.textContent = releaseDate
 
-    poster.appendChild(posterImg)
+    info.appendChild(title)
+    info.appendChild(release)
+    image.appendChild(posterImg)
+    poster.appendChild(image)
     movie.appendChild(poster)
-    movie.appendChild(title)
-    movie.appendChild(release)
+    movie.appendChild(info)
 
     return movie
 }

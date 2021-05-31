@@ -72,6 +72,7 @@ h1 {
     color: var(--type-dark-tint);
     font-weight: var(--bold);
     padding: 0.2rem 1rem;
+    font-size: 1.2rem;
     cursor: default;
     border-radius: var(--radius);
     transition: all var(--speed) var(--flow);

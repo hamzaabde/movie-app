@@ -18,12 +18,13 @@
     --type-grey: hsl(0, 0%, 95%);
     --type-dark-tint: hsl(0, 9%, 57%);
     --background: hsl(0, 0%, 13%);
-    --background-tint: hsl(0, 11%, 24%);
+    --background-tint: hsl(0, 19%, 29%);
     --backdrop: hsla(0, 11%, 24%, 0.5);
     --shadow: hsl(0, 47%, 33%);
 
     /* border radius */
     --radius: 0.2rem;
+    --poster-radius: 1rem;
 
     /* transition speed */
     --speed: 70ms;
