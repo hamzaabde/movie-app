@@ -17,6 +17,7 @@ const MovieTile = (id, imgSrc, titleText, releaseDate) => {
 
     const image = div.cloneNode()
     image.classList.add('image')
+    image.setAttribute('load', 'lazy')
 
     const posterImg = img.cloneNode()
     posterImg.src = imgSrc
