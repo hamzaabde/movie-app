@@ -17,28 +17,27 @@ const fetchConfigs = async () => {
 }
 
 const composeTrendingUrl = () => {
-    return `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_key}&sort_by=popular.desc`
+    return `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_key}&sort_by=popular.desc&with_original_language=en`
 }
 
 const composeTopRatedUrl = () => {
     const sortBy = '&sort_by=vote_average.desc'
-    const certification = '&certification_country=US&certification.lte=R'
+    const certification = '&certification_country=US'
     const queries = `${certification}${sortBy}`
 
-    return `https://api.themoviedb.org/3/discover/movie?api_key=${API_key}${queries}`
+    return `https://api.themoviedb.org/3/discover/movie?api_key=${API_key}${queries}&with_original_language=en`
 }
 
 const composeUpcomingUrl = () => {
-    const releaseDate = `&release_date.gte=${currentDate()}`
-    const certification = '&certification_country=US&certification.lte=R'
-    const queries = `${certification}${releaseDate}`
+    const releaseDate = `&primary_release_date.gte=${currentDate()}`
+    const queries = `${releaseDate}`
 
-    return `https://api.themoviedb.org/3/discover/movie?api_key=${API_key}${queries}`
+    return `https://api.themoviedb.org/3/discover/movie?api_key=${API_key}${queries}&with_original_language=en`
 }
 
 const composeMostPopularUrl = () => {
-    const sortBy = '&sort_by=popularity.desc'
-    const certification = '&certification_country=US&certification.lte=R'
+    const sortBy = '&with_original_language=en&sort_by=popularity.desc'
+    const certification = '&certification_country=US'
     const queries = `${certification}${sortBy}`
 
     return `https://api.themoviedb.org/3/discover/movie?api_key=${API_key}${queries}`
@@ -46,11 +45,13 @@ const composeMostPopularUrl = () => {
 
 const composeSearchUrl = query => {
     const urlQuery = encodeURI(query)
-    return `https://api.themoviedb.org/3/search/movie?api_key=${API_key}&region=US&include_adult=false${urlQuery}`
+    const certification = '&certification_country=US&with_original_language=en'
+    return `https://api.themoviedb.org/3/search/movie?api_key=${API_key}&region=US&include_adult=false&query=${urlQuery}`
 }
 
 const composePosterUrl = async (posterSrc, posterSize = 3) => {
     const { images } = await fetchConfigs()
+    if (posterSrc == null) return '/no-poster.jpeg'
     return `${images.secure_base_url}${images.poster_sizes[posterSize]}${posterSrc}`
 }
 

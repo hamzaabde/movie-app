@@ -17,7 +17,15 @@ const getCategory = async (category, results) => {
     return CategoryContainer(category, tiles)
 }
 
-const showCase = async trigger => {
+const showCase = async (trigger, query) => {
+    const showcase = document.querySelector('.showcase')
+
+    if (showcase.hasChildNodes) {
+        while (showcase.firstChild) {
+            showcase.removeChild(showcase.firstChild)
+        }
+    }
+
     const frag = new DocumentFragment()
 
     const trendingUrl = compose.trendingUrl()
@@ -38,6 +46,19 @@ const showCase = async trigger => {
     const upcomingUrl = compose.upcomingUrl()
     const { results: upcomingResults } = await fetchJson(upcomingUrl)
     const upcomingFrag = await getCategory('Upcoming', upcomingResults)
+
+    if (trigger == 'search' && query) {
+        const searchUrl = compose.searchUrl(query)
+        const { results: searchResults } = await fetchJson(searchUrl)
+        const searchFrag = await getCategory('Search Results', searchResults)
+
+        frag.appendChild(searchFrag)
+        showcase.appendChild(frag)
+
+        return
+    } else if (trigger == 'search') {
+        trigger = 'all'
+    }
 
     switch (trigger) {
         case 'all':
@@ -60,7 +81,7 @@ const showCase = async trigger => {
             break
     }
 
-    document.querySelector('.showcase').appendChild(frag)
+    showcase.appendChild(frag)
 }
 
 export default showCase
